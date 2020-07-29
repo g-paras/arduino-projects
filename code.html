@@ -217,28 +217,28 @@
             &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); <br>
             &nbsp;&nbsp;&nbsp;&nbsp; } <br>
             void directionControl() { &nbsp;&nbsp;&nbsp;&nbsp; // Set motors to maximum speed <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(enA, 255); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(enB, 255); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(9, 255); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(3, 255); <br>
             <br>
             &nbsp;&nbsp;&nbsp;&nbsp; // Turn on motor A & B <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in1, HIGH); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in2, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in3, HIGH); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in4, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(8, HIGH); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(7, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(5, HIGH); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(4, LOW); <br>
             &nbsp;&nbsp;&nbsp;&nbsp; delay(2000); <br>
             <br>
             &nbsp;&nbsp;&nbsp;&nbsp; // Now change motor directions <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in1, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in2, HIGH); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in3, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in4, HIGH); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(8, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(7, HIGH); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(5, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(4, HIGH); <br>
             &nbsp;&nbsp;&nbsp;&nbsp; delay(2000); <br>
             &nbsp;&nbsp;&nbsp;&nbsp; <br>
             &nbsp;&nbsp;&nbsp;&nbsp; // Turn off motors <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in1, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in2, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in3, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in4, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(8, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(7, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(5, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(4, LOW); <br>
             &nbsp;&nbsp;&nbsp;&nbsp;} <br></p>
         </div>
       </div>

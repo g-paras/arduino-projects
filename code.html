@@ -200,7 +200,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(10, LOW); <br>
                 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(11, LOW); <br>
                 &nbsp;&nbsp;&nbsp;&nbsp; } <br>
-                &nbsp;&nbsp;&nbsp;&nbsp; delay(10); // Delay a little bit to improve simulation performance <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; delay(10); &nbsp;&nbsp;&nbsp;&nbsp; // Delay a little bit to improve simulation performance <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;} <br></p>
 
         </div>
@@ -252,12 +252,12 @@
           <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding: 10px;">
               #include&lt;LiquidCrystal.h&gt; <br>
               LiquidCrystal lcd(12, 11, 5, 4, 3, 2);  <br>
-              const int sensor=A1; // Assigning analog pin A1 to variable 'sensor' <br>
-              float tempc;  //variable to store temperature in degree Celsius <br>
-              float tempf;  //variable to store temperature in Fahreinheit  <br>
-              float vout;  //temporary variable to hold sensor reading <br>
+              const int sensor=A1; &nbsp;&nbsp;&nbsp;&nbsp; // Assigning analog pin A1 to variable 'sensor' <br>
+              float tempc;  &nbsp;&nbsp;&nbsp;&nbsp; //variable to store temperature in degree Celsius <br>
+              float tempf;  &nbsp;&nbsp;&nbsp;&nbsp; //variable to store temperature in Fahreinheit  <br>
+              float vout;  &nbsp;&nbsp;&nbsp;&nbsp; //temporary variable to hold sensor reading <br>
               void setup(){ <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;  pinMode(sensor,INPUT); // Configuring pin A1 as input <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  pinMode(sensor,INPUT); &nbsp;&nbsp;&nbsp;&nbsp; // Configuring pin A1 as input <br>
               &nbsp;&nbsp;&nbsp;&nbsp;  Serial.begin(9600); <br>
               &nbsp;&nbsp;&nbsp;&nbsp;  lcd.begin(16,2);   <br>
               &nbsp;&nbsp;&nbsp;&nbsp;  delay(500); <br>
@@ -266,15 +266,15 @@
               void loop(){ <br>
               &nbsp;&nbsp;&nbsp;&nbsp;  vout=analogRead(sensor); <br>
               &nbsp;&nbsp;&nbsp;&nbsp;  vout=((vout*5/1024)-0.5)*100; <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;  tempc=vout; // Storing value in Degree Celsius <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;  tempf=(vout*1.8)+32; // Converting to Fahrenheit <br> 
+              &nbsp;&nbsp;&nbsp;&nbsp;  tempc=vout; &nbsp;&nbsp;&nbsp;&nbsp; // Storing value in Degree Celsius <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  tempf=(vout*1.8)+32; &nbsp;&nbsp;&nbsp;&nbsp; // Converting to Fahrenheit <br> 
               &nbsp;&nbsp;&nbsp;&nbsp;  lcd.setCursor(0,0); <br>
               &nbsp;&nbsp;&nbsp;&nbsp;  lcd.print("in DegreeC= "); <br>
               &nbsp;&nbsp;&nbsp;&nbsp;  lcd.print(tempc); <br>
               &nbsp;&nbsp;&nbsp;&nbsp;  lcd.setCursor(0,1); <br>
               &nbsp;&nbsp;&nbsp;&nbsp;  lcd.print("in Fahrenheit="); <br>
               &nbsp;&nbsp;&nbsp;&nbsp;  lcd.print(tempf); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;  delay(1000); //Delay of 1 second for ease of viewing in serial monitor <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  delay(1000); &nbsp;&nbsp;&nbsp;&nbsp; //Delay of 1 second for ease of viewing in serial monitor <br>
               &nbsp;&nbsp;&nbsp;&nbsp;} <br></p>
         </div>
       </div>

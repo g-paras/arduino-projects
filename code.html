@@ -178,7 +178,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp; pinMode(12, OUTPUT); <br>
             &nbsp;&nbsp;&nbsp;&nbsp; pinMode(11, OUTPUT); <br>
             &nbsp;&nbsp;&nbsp;&nbsp; pinMode(10, OUTPUT); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;}
+            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
             void loop(){ <br>
             &nbsp;&nbsp;&nbsp;&nbsp;temp = analogRead(A0); <br>
             &nbsp;&nbsp;&nbsp;&nbsp;temp = ((temp*5/1023)-0.5)*100; <br>
@@ -250,7 +250,7 @@
           </div>
           <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Temperature Display on 16×2 LCD Module</h2>
           <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding: 10px;">
-            #include<LiquidCrystal.h> <br>
+              #include&lt;LiquidCrystal.h&gt; <br>
               LiquidCrystal lcd(12, 11, 5, 4, 3, 2);  <br>
               const int sensor=A1; // Assigning analog pin A1 to variable 'sensor' <br>
               float tempc;  //variable to store temperature in degree Celsius <br>

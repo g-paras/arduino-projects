@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Code for projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+</head>
+
+<body>
+  <header class="text-gray-500 bg-gray-900 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+        <img src="https://img.icons8.com/color/48/000000/arduino.png" />
+        <span class="ml-3 text-xl">Arduino</span>
+      </a>
+      <nav
+        class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
+        <a class="mr-5 hover:text-white" href="index.html">Projects</a>
+        <a class="mr-5 hover:text-white" href="#">Code</a>
+        <a class="mr-5 hover:text-white" href="#about">About</a>
+      </nav>
+      <a href="https://github.com/g-paras/arduino-projects">
+        <button
+          class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">GitHub
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button></a>
+    </div>
+  </header>
+
+  <section class="text-gray-700 body-font ">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+        <div class="sm:w-1/2 mb-10 px-4 " id="blink">
+          <div class="rounded-lg h-64 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full" src="blink.png">
+          </div>
+          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">3 Blinking Leds</h2>
+          <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding: 10px;">
+            void setup() {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(13, OUTPUT); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(11, OUTPUT); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(12, OUTPUT); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;} <br><br>
+            void loop() { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(13, HIGH); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(11, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(12, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); // Wait for 1000 millisecond(s) <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(11, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(13, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(12, HIGH); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); // Wait for 1000 millisecond(s) <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(12, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(11, HIGH); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(13, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); // Wait for 1000 millisecond(s) <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;} <br></p>
+
+        </div>
+        <div class="sm:w-1/2 mb-10 px-4" id="rgb">
+          <div class="rounded-lg h-64 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full" src="rgb.png">
+          </div>
+          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">RGB Led blinking</h2>
+          <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding: 10px;">
+            void setup() { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(11, OUTPUT); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(10, OUTPUT); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(9, OUTPUT); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            <br>
+            void loop() { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(11, 255); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(10, 0); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(9, 0); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(11, 0); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(10, 255); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(9, 0); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(11, 0); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(10, 0); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(9, 255); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+
+          </p>
+
+        </div>
+      </div>
+      <br>
+      <div class="flex flex-wrap -mx-4 -mb-10 text-center" id="pir">
+        <div class="sm:w-1/2 mb-10 px-4">
+          <div class="rounded-lg h-64 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full" src="pir.png">
+          </div>
+          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Burglar Alarm using PIR Sensor</h2>
+          <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding: 10px;">
+            #define led 4 <br>
+            #define buzzer 5 <br>
+            #define sensor A0 <br>
+            int sound = 250; <br>
+            void setup() { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; Serial.begin(5600); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(sensor, INPUT); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(buzzer, OUTPUT); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(led, OUTPUT); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;} <br> <br>
+            void loop() { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; int detect = digitalRead(sensor); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; if (detect == HIGH) { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(led, HIGH); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; tone(buzzer, sound); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; else { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(led, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; noTone(buzzer); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; delay(100); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+          </p>
+
+        </div>
+        <div class="sm:w-1/2 mb-10 px-4" id="ir">
+          <div class="rounded-lg h-64 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full" src="ir.png">
+          </div>
+          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Burglar Alarm using IR Sensor</h2>
+          <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding: 10px;">
+            #define led 4 &nbsp;&nbsp;&nbsp;&nbsp; // led at pin 4 <br>
+            #define buzzer 5 &nbsp;&nbsp;&nbsp;&nbsp; // buzzer at pin 5 <br>
+            #define sensor 6 &nbsp;&nbsp;&nbsp;&nbsp; // ir sensor at pin 6 <br>
+            int sound=250; &nbsp;&nbsp;&nbsp;&nbsp; // set buzzer sound <br>
+            void setup() { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; Serial.begin(9600); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(sensor,INPUT); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(led,OUTPUT); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(buzzer,OUTPUT); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+            <br>
+            void loop(){ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; int detect=digitalRead(sensor); &nbsp;&nbsp;&nbsp;&nbsp; // read status of sensor
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; if(detect==HIGH) { &nbsp;&nbsp;&nbsp;&nbsp;// if sensor detects obstacle <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(led,HIGH); &nbsp;&nbsp;&nbsp;&nbsp; // led on
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; tone(buzzer,sound); &nbsp;&nbsp;&nbsp;&nbsp; // buzzer
+            sounds <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; else{ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(led,LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; noTone(buzzer); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; delay(300); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+          </p>
+
+        </div>
+      </div>
+      <br>
+      <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+        <div class="sm:w-1/2 mb-10 px-4"  id="temperature">
+          <div class="rounded-lg h-64 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full" src="temprature.png">
+          </div>
+          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Temperature Reflector</h2>
+          <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align:left; padding: 10px;">
+            float temp = 0; <br>
+            void setup() { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(A0, INPUT); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(13, OUTPUT); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(12, OUTPUT); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(11, OUTPUT); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(10, OUTPUT); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;}
+            void loop(){ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;temp = analogRead(A0); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;temp = ((temp*5/1023)-0.5)*100; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;if (temp < 10) { <br>
+              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; noTone(13); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(11, HIGH); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(10, LOW); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(12, LOW); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;else if (temp <50 && temp>=10) { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; tone(13, 95); <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(10, HIGH); <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(11, LOW); <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(12, LOW); <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;else { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; tone(13, 225); <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(12, HIGH); <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(10, LOW); <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(11, LOW); <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; delay(10); // Delay a little bit to improve simulation performance <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;} <br></p>
+
+        </div>
+        <div class="sm:w-1/2 mb-10 px-4" id="motor">
+          <div class="rounded-lg h-64 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full" src="motor.png">
+          </div>
+          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Speed control of D.C. Motor</h2>
+          <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding: 10px;">
+            void loop() { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; directionControl(); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; speedControl(); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; } <br>
+            void directionControl() { &nbsp;&nbsp;&nbsp;&nbsp; // Set motors to maximum speed <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(enA, 255); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(enB, 255); <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; // Turn on motor A & B <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in1, HIGH); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in2, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in3, HIGH); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in4, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; delay(2000); <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; // Now change motor directions <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in1, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in2, HIGH); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in3, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in4, HIGH); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; delay(2000); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; // Turn off motors <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in1, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in2, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in3, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(in4, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;} <br></p>
+        </div>
+      </div>
+      <br>
+      <div class="flex flex-wrap -mx-4 -mb-10 text-center" id="lcd">
+        <div class="sm:w-1/2 mb-10 px-4" id="lcd">
+          <div class="rounded-lg h-64 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full" src="lcd.png">
+          </div>
+          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Temperature sensor with lcd</h2>
+          <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding: 10px;">
+            #include<LiquidCrystal.h> <br>
+              LiquidCrystal lcd(12, 11, 5, 4, 3, 2);  <br>
+              const int sensor=A1; // Assigning analog pin A1 to variable 'sensor' <br>
+              float tempc;  //variable to store temperature in degree Celsius <br>
+              float tempf;  //variable to store temperature in Fahreinheit  <br>
+              float vout;  //temporary variable to hold sensor reading <br>
+              void setup(){ <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  pinMode(sensor,INPUT); // Configuring pin A1 as input <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  Serial.begin(9600); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  lcd.begin(16,2);   <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  delay(500); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+               <br>
+              void loop(){ <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  vout=analogRead(sensor); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  vout=((vout*5/1024)-0.5)*100; <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  tempc=vout; // Storing value in Degree Celsius <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  tempf=(vout*1.8)+32; // Converting to Fahrenheit <br> 
+              &nbsp;&nbsp;&nbsp;&nbsp;  lcd.setCursor(0,0); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  lcd.print("in DegreeC= "); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  lcd.print(tempc); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  lcd.setCursor(0,1); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  lcd.print("in Fahrenheit="); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  lcd.print(tempf); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;  delay(1000); //Delay of 1 second for ease of viewing in serial monitor <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;} <br></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="text-gray-500 bg-gray-900 body-font" id="about">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="inline-block w-8 h-8 text-gray-700 mb-8"
+          viewBox="0 0 975.036 975.036">
+          <path
+            d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
+          </path>
+        </svg>
+        <p class="leading-relaxed text-lg">This website is made by Paras Gupta and all the images used are from thinker
+          cad made by himself. You are allowed to use any of the images used in this webpage and the same is applied to
+          the code provided on this page. Please don't forget to give this project a star on GitHub, the link is
+          provided on top. <br> Connect with me on <a
+            href="https://www.linkedin.com/in/paras-gupta-34a780166/"><u>LinkedIn</u></a><br> Follow me on <a
+            href="https://github.com/g-paras"><u>GitHub</u></a></p>
+        <span class="inline-block h-1 w-10 rounded bg-blue-500 mt-8 mb-6"></span>
+        <h2 class="text-white font-medium title-font tracking-wider text-sm">Paras Gupta</h2>
+        <p class="text-gray-600">guptaparas039@gmail.com</p>
+        <h3 class="text-white font-medium title-font tracking-wider text-sm">KIET Group of Institutions</h3>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

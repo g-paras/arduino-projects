@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Getting Started with Arduino</title>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+</head>
+<body>
+  <header class="text-gray-500 bg-gray-900 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
+        <img src="https://img.icons8.com/color/48/000000/arduino.png" />
+        <span class="ml-3 text-xl">Arduino</span>
+      </a>
+      <nav
+        class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
+        <a class="mr-5 hover:text-white" href="#">Projects</a>
+        <a class="mr-5 hover:text-white" href="code.html">Code</a>
+        <a class="mr-5 hover:text-white" href="#about">About</a>
+      </nav>
+      <a href="https://github.com/g-paras/arduino-projects"><button
+          class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">GitHub
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button></a>
+    </div>
+  </header>
+  <section class="text-gray-700 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-wrap -m-4">
+        <div class="p-4 md:w-1/3">
+          <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="blink.png" alt="blog">
+            <div class="p-6">
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">3 Blinking Leds</h1>
+              <p class="leading-relaxed mb-3">The first program every programmer learns consists in writing enough code
+                to make their code show the sentence "Hello World!" on a screen. The blinking LED is the "Hello World!"
+                of physical computing.</p>
+              <div class="flex items-center flex-wrap ">
+                <a class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0" href="code.html#blink">Go to Code
+                  <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/3">
+          <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="rgb.png" alt="blog">
+            <div class="p-6">
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">RGB Led blinking</h1>
+              <p class="leading-relaxed mb-3">There are actually two types of RGB led’s; the common cathode one and the
+                common anode one.We are going to use the common cathode RGB led. You cannot distinguish between them
+                because both look same.</p>
+              <div class="flex items-center flex-wrap">
+                <a class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0" href="code.html#rgb">Go to Code
+                  <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/3">
+          <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="pir.png" alt="blog">
+            <div class="p-6">
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Burglar Alarm using PIR Sensor</h1>
+              <p class="leading-relaxed mb-3">The design of the PIR Motion Sensor using Arduino is very simple. The PIR
+                Sensor Module has three pins: VCC, Digital Out and GND. Connect VCC and GND to +5V and GND respectively.
+              </p>
+              <div class="flex items-center flex-wrap ">
+                <a class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0" href="code.html#pir">Go to Code
+                  <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/3">
+          <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="ir.png" alt="blog">
+            <div class="p-6">
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Burglar Alarm using IR Sensor</h1>
+              <p class="leading-relaxed mb-3">This is a multipurpose infrared sensor which can be used for color
+                detection.The sensor provides a digital as well as analog output. An on board LED is used to indicate
+                the presence of an object.</p>
+              <div class="flex items-center flex-wrap ">
+                <a class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0" href="code.html#ir">Go to Code
+                  <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/3">
+          <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="temprature.png" alt="blog">
+            <div class="p-6">
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Temperature Reflector</h1>
+              <p class="leading-relaxed mb-3">This project is a simple project which can be use as a thermometer. It can
+                sense the temperature it is put around and transmit it to degrees Celsius. It consists of very little
+                parts which is cheap and reliable.</p>
+              <div class="flex items-center flex-wrap">
+                <a class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0" href="code.html#temperature">Go to
+                  Code
+                  <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/3">
+          <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="motor.png" alt="blog">
+            <div class="p-6">
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Speed control of D.C. Motor</h1>
+              <p class="leading-relaxed mb-3">If you are planning on assembling your new robot friend, you will
+                eventually want to learn about controlling DC motors. One of the easiest and inexpensive way to control
+                DC motors is to interface L293D Motor Driver IC with Arduino. </p>
+              <div class="flex items-center flex-wrap ">
+                <a class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0" href="code.html#motor">Go to Code
+                  <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/3">
+          <div class="h-full border-2 border-gray-200 rounded-lg overflow-hidden">
+            <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="lcd.png" alt="blog">
+            <div class="p-6">
+              <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Temperature sensor with LCD</h1>
+              <p class="leading-relaxed mb-3">If you are planning on assembling your new robot friend, you will
+                eventually want to learn about controlling DC motors. One of the easiest and inexpensive way to control
+                DC motors is to interface L293D Motor Driver IC with Arduino. </p>
+              <div class="flex items-center flex-wrap ">
+                <a class="text-blue-500 inline-flex items-center md:mb-2 lg:mb-0" href="code.html#lcd">Go to Code
+                  <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="text-gray-500 bg-gray-900 body-font" id="about">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="inline-block w-8 h-8 text-gray-700 mb-8"
+          viewBox="0 0 975.036 975.036">
+          <path
+            d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
+          </path>
+        </svg>
+        <p class="leading-relaxed text-lg">This website is made by Paras Gupta and all the images used are from thinker
+          cad made by himself. You are allowed to use any of the images used in this webpage and the same is applied to
+          the code provided on this page. Please don't forget to give this project a star on GitHub, the link is
+          provided on top. <br> Connect with me on <a
+            href="https://www.linkedin.com/in/paras-gupta-34a780166/"><u>LinkedIn</u></a><br> Follow me on <a
+            href="https://github.com/g-paras"><u>GitHub</u></a></p>
+        <span class="inline-block h-1 w-10 rounded bg-blue-500 mt-8 mb-6"></span>
+        <h2 class="text-white font-medium title-font tracking-wider text-sm">Paras Gupta</h2>
+        <p class="text-gray-600">guptaparas039@gmail.com</p>
+        <h3 class="text-white font-medium title-font tracking-wider text-sm">KIET Group of Institutions</h3>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

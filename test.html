@@ -1,0 +1,221 @@
+##3blinking
+
+void setup() <br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  pinMode(13, OUTPUT); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  pinMode(11, OUTPUT); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  pinMode(12, OUTPUT); <br>
+} <br><br>
+void loop() <br>
+{ <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;  digitalWrite(13, HIGH); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;  digitalWrite(11, LOW); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;  digitalWrite(12, LOW); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;  delay(1000); // Wait for 1000 millisecond(s) <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(11, LOW); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(13, LOW); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(12, HIGH); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); // Wait for 1000 millisecond(s) <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(12, LOW); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(11, HIGH); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(13, LOW); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); // Wait for 1000 millisecond(s) <br>
+} <br>
+
+##temperature
+
+float temp = 0; <br>
+void setup(){ <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;  pinMode(A0, INPUT); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;  pinMode(13, OUTPUT); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; pinMode(12, OUTPUT); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; pinMode(11, OUTPUT); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp; pinMode(10, OUTPUT); <br>
+}
+void loop(){ <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;temp = analogRead(A0); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;temp = ((temp*5/1023)-0.5)*100; <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;if (temp < 10){ <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp; noTone(13); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(11, HIGH); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(10, LOW);
+    &nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(12, LOW);
+    &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;else if (temp <50 && temp>=10){ <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp; tone(13, 95); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(10, HIGH); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(11, LOW); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(12, LOW); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;else{ <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp; tone(13, 225); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(12, HIGH); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(10, LOW); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(11, LOW); <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;  } <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;  delay(10); // Delay a little bit to improve simulation performance <br>
+} <br>
+
+##pir
+
+#define led 4 <br>
+#define buzzer 5 <br>
+#define sensor A0 <br>
+int sound = 250; <br>
+void setup(){ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  Serial.begin(5600); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  pinMode(sensor, INPUT); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  pinMode(buzzer, OUTPUT); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  pinMode(led, OUTPUT); <br>
+} <br>
+void loop(){ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  int detect = digitalRead(sensor); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  if (detect == HIGH){ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(led, HIGH); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp; tone(buzzer, sound); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  } <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  else{ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(led, LOW); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp; noTone(buzzer); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  } <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  delay(100); <br>
+} <br>
+
+##rgb
+void setup() { <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  pinMode(11, OUTPUT); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  pinMode(10, OUTPUT); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  pinMode(9, OUTPUT); <br>
+} <br>
+<br>
+void loop() { <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  analogWrite(11, 255); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  analogWrite(10, 0); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  analogWrite(9, 0); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  delay(1000); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  analogWrite(11, 0); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  analogWrite(10, 255); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  analogWrite(9, 0); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  delay(1000); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  analogWrite(11, 0); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  analogWrite(10, 0); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  analogWrite(9, 255); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  delay(1000); <br>
+} <br>
+
+##ir 
+
+#define led 4            // led at pin 4
+#define buzzer 5      // buzzer at pin 5
+#define sensor 6      // ir sensor at pin 6
+int sound=250;         // set buzzer sound
+void setup() {
+&nbsp;&nbsp;&nbsp;&nbsp; Serial.begin(9600);
+&nbsp;&nbsp;&nbsp;&nbsp; pinMode(sensor,INPUT);
+&nbsp;&nbsp;&nbsp;&nbsp; pinMode(led,OUTPUT);
+&nbsp;&nbsp;&nbsp;&nbsp; pinMode(buzzer,OUTPUT);
+&nbsp;&nbsp;&nbsp;&nbsp; }
+
+void loop(){
+&nbsp;&nbsp;&nbsp;&nbsp; int detect=digitalRead(sensor);   // read status of sensor
+&nbsp;&nbsp;&nbsp;&nbsp; if(detect==HIGH) {               // if sensor detects obstacle
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  digitalWrite(led,HIGH);         // led on
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  tone(buzzer,sound);            // buzzer sounds
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp; else{
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  digitalWrite(led,LOW);
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  noTone(buzzer);
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp; delay(300);
+&nbsp;&nbsp;&nbsp;&nbsp; }
+
+##motor 
+
+// Motor A connections
+int enA = 9;
+int in1 = 8;
+int in2 = 7;
+// Motor B connections
+int enB = 3;
+int in3 = 5;
+int in4 = 4;
+
+void setup() {
+	// Set all the motor control pins to outputs
+	pinMode(enA, OUTPUT);
+	pinMode(enB, OUTPUT);
+	pinMode(in1, OUTPUT);
+	pinMode(in2, OUTPUT);
+	pinMode(in3, OUTPUT);
+	pinMode(in4, OUTPUT);
+	
+	// Turn off motors - Initial state
+	digitalWrite(in1, LOW);
+	digitalWrite(in2, LOW);
+	digitalWrite(in3, LOW);
+	digitalWrite(in4, LOW);
+}
+
+void loop() { <br>
+	directionControl(); <br>
+	delay(1000); <br>
+	speedControl(); <br>
+	delay(1000); <br>
+} <br>
+ <br>
+// This function lets you control spinning direction of motors <br>
+void directionControl() { <br>
+	// Set motors to maximum speed <br>
+	// For PWM maximum possible values are 0 to 255 <br>
+	analogWrite(enA, 255); <br>
+	analogWrite(enB, 255); <br>
+ <br>
+	// Turn on motor A & B <br>
+	digitalWrite(in1, HIGH); <br>
+	digitalWrite(in2, LOW); <br>
+	digitalWrite(in3, HIGH); <br>
+	digitalWrite(in4, LOW); <br>
+	delay(2000); <br>
+	 <br>
+	// Now change motor directions <br>
+	digitalWrite(in1, LOW); <br>
+	digitalWrite(in2, HIGH); <br>
+	digitalWrite(in3, LOW); <br>
+	digitalWrite(in4, HIGH); <br>
+	delay(2000); <br>
+	 <br>
+	// Turn off motors <br>
+	digitalWrite(in1, LOW); <br>
+	digitalWrite(in2, LOW); <br>
+	digitalWrite(in3, LOW); <br>
+	digitalWrite(in4, LOW); <br>
+} <br>
+
+##lcd
+
+#include<LiquidCrystal.h> <br>
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);  <br>
+const int sensor=A1; // Assigning analog pin A1 to variable 'sensor' <br>
+float tempc;  //variable to store temperature in degree Celsius <br>
+float tempf;  //variable to store temperature in Fahreinheit  <br>
+float vout;  //temporary variable to hold sensor reading <br>
+void setup(){ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  pinMode(sensor,INPUT); // Configuring pin A1 as input <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  Serial.begin(9600); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  lcd.begin(16,2);   <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  delay(500); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+ <br>
+void loop(){ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  vout=analogRead(sensor); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  vout=((vout*5/1024)-0.5)*100; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  tempc=vout; // Storing value in Degree Celsius <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  tempf=(vout*1.8)+32; // Converting to Fahrenheit <br> 
+&nbsp;&nbsp;&nbsp;&nbsp;  lcd.setCursor(0,0); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  lcd.print("in DegreeC= "); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  lcd.print(tempc); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  lcd.setCursor(0,1); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  lcd.print("in Fahrenheit="); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  lcd.print(tempf); <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  delay(1000); //Delay of 1 second for ease of viewing in serial monitor <br>
+&nbsp;&nbsp;&nbsp;&nbsp;} <br>

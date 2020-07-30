@@ -219,3 +219,41 @@ void loop(){ <br>
 &nbsp;&nbsp;&nbsp;&nbsp;  lcd.print(tempf); <br>
 &nbsp;&nbsp;&nbsp;&nbsp;  delay(1000); //Delay of 1 second for ease of viewing in serial monitor <br>
 &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+
+<div id="temp-buzz">
+</div>
+
+#include&lt;LiquidCrystal.h&gt; <br>
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2); <br>
+const int sensor=A1; <br>     
+float tempc; <br>      
+float tempf; <br>      
+float vout; <br>      
+void setup() { <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;pinMode(sensor,INPUT); <br>      
+	&nbsp;&nbsp;&nbsp;&nbsp;pinMode(6,OUTPUT); <br> 
+	&nbsp;&nbsp;&nbsp;&nbsp;Serial.begin(9600); <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;lcd.begin(16,2); <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;delay(50); <br>
+} <br>
+ <br>
+void loop() { <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;vout=analogRead(sensor); <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;vout=((vout*5/1024)-0.5)*100; <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;tempc=vout; <br>      
+	&nbsp;&nbsp;&nbsp;&nbsp;tempf=(vout*1.8)+32; <br>      
+	&nbsp;&nbsp;&nbsp;&nbsp;if (tempc < 39) { <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;noTone(6); <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;else { <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;tone(6, 225); <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;lcd.setCursor(0,0); <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;lcd.print("in DegreeC= "); <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;lcd.print(tempc); <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;lcd.setCursor(0,1); <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;lcd.print("in Fahrenheit="); <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;lcd.print(tempf); <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;delay(100); <br>     
+	} <br>
+	

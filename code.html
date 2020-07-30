@@ -61,7 +61,6 @@
             &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(13, LOW); <br>
             &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); // Wait for 1000 millisecond(s) <br>
             &nbsp;&nbsp;&nbsp;&nbsp;} <br></p>
-
         </div>
         <div class="sm:w-1/2 mb-10 px-4" id="rgb">
           <div class="rounded-lg h-64 overflow-hidden">
@@ -89,14 +88,12 @@
             &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(9, 255); <br>
             &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); <br>
             &nbsp;&nbsp;&nbsp;&nbsp;} <br>
-
           </p>
-
         </div>
       </div>
       <br>
-      <div class="flex flex-wrap -mx-4 -mb-10 text-center" id="pir">
-        <div class="sm:w-1/2 mb-10 px-4">
+      <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+        <div class="sm:w-1/2 mb-10 px-4" id="pir">
           <div class="rounded-lg h-64 overflow-hidden">
             <img alt="content" class="object-cover object-center h-full w-full" src="pir.png">
           </div>
@@ -125,7 +122,6 @@
             &nbsp;&nbsp;&nbsp;&nbsp; delay(100); <br>
             &nbsp;&nbsp;&nbsp;&nbsp;} <br>
           </p>
-
         </div>
         <div class="sm:w-1/2 mb-10 px-4" id="ir">
           <div class="rounded-lg h-64 overflow-hidden">
@@ -160,7 +156,6 @@
             &nbsp;&nbsp;&nbsp;&nbsp; delay(300); <br>
             &nbsp;&nbsp;&nbsp;&nbsp; } <br>
           </p>
-
         </div>
       </div>
       <br>
@@ -202,7 +197,6 @@
                 &nbsp;&nbsp;&nbsp;&nbsp; } <br>
                 &nbsp;&nbsp;&nbsp;&nbsp; delay(10); &nbsp;&nbsp;&nbsp;&nbsp; // Delay a little bit to improve simulation performance <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;} <br></p>
-
         </div>
         <div class="sm:w-1/2 mb-10 px-4" id="motor">
           <div class="rounded-lg h-64 overflow-hidden">
@@ -276,6 +270,46 @@
               &nbsp;&nbsp;&nbsp;&nbsp;  lcd.print(tempf); <br>
               &nbsp;&nbsp;&nbsp;&nbsp;  delay(1000); &nbsp;&nbsp;&nbsp;&nbsp; //Delay of 1 second for ease of viewing in serial monitor <br>
               &nbsp;&nbsp;&nbsp;&nbsp;} <br></p>
+        </div>
+        <div class="sm:w-1/2 mb-10 px-4" id="tmp-buzz">
+          <div class="rounded-lg h-64 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full" src="tmp-buzz.png">
+          </div>
+          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Temperature Display on 16×2 LCD Module with buzzer</h2>
+          <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding: 10px;">
+            #include&lt;LiquidCrystal.h&gt; <br>
+            LiquidCrystal lcd(12, 11, 5, 4, 3, 2); <br>
+            const int sensor=A1; <br>     
+            float tempc; <br>      
+            float tempf; <br>      
+            float vout; <br>      
+            void setup() { <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;pinMode(sensor,INPUT); <br>      
+              &nbsp;&nbsp;&nbsp;&nbsp;pinMode(6,OUTPUT); <br> 
+              &nbsp;&nbsp;&nbsp;&nbsp;Serial.begin(9600); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;lcd.begin(16,2); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;delay(50); <br>
+            } <br>
+             <br>
+            void loop() { <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;vout=analogRead(sensor); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;vout=((vout*5/1024)-0.5)*100; <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;tempc=vout; <br>      
+              &nbsp;&nbsp;&nbsp;&nbsp;tempf=(vout*1.8)+32; <br>      
+              &nbsp;&nbsp;&nbsp;&nbsp;if (tempc < 39) { <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;noTone(6); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;else { <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;tone(6, 225); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;lcd.setCursor(0,0); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;lcd.print("in DegreeC= "); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;lcd.print(tempc); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;lcd.setCursor(0,1); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;lcd.print("in Fahrenheit="); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;lcd.print(tempf); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;delay(100); <br>     
+              } <br></p>
         </div>
       </div>
     </div>

@@ -160,13 +160,13 @@
       </div>
       <br>
       <div class="flex flex-wrap -mx-4 -mb-10 text-center">
-        <div class="sm:w-1/2 mb-10 px-4"  id="temperature">
+        <div class="sm:w-1/2 mb-10 px-4" id="temperature">
           <div class="rounded-lg h-64 overflow-hidden">
             <img alt="content" class="object-cover object-center h-full w-full" src="img/temprature.png">
           </div>
           <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Temperature Reflector</h2>
           <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align:left; padding: 10px;">
-            float temp = 0; <br> 
+            float temp = 0; <br>
             void setup() { <br>
             &nbsp;&nbsp;&nbsp;&nbsp; pinMode(A0, INPUT); <br>
             &nbsp;&nbsp;&nbsp;&nbsp; pinMode(13, OUTPUT); <br>
@@ -183,9 +183,9 @@
               &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(10, LOW); <br>
               &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(12, LOW); <br>
               &nbsp;&nbsp;&nbsp;&nbsp;} <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;else if (temp <50 && temp>=10) { <br>
-              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; tone(13, 95); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(10, HIGH); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;else if (temp <50 && temp>=10) { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; tone(13, 95); <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(10, HIGH); <br>
                 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(11, LOW); <br>
                 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(12, LOW); <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;} <br>
@@ -195,7 +195,8 @@
                 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(10, LOW); <br>
                 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(11, LOW); <br>
                 &nbsp;&nbsp;&nbsp;&nbsp; } <br>
-                &nbsp;&nbsp;&nbsp;&nbsp; delay(10); &nbsp;&nbsp;&nbsp;&nbsp; // Delay a little bit to improve simulation performance <br>
+                &nbsp;&nbsp;&nbsp;&nbsp; delay(10); &nbsp;&nbsp;&nbsp;&nbsp; // Delay a little bit to improve simulation
+                performance <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;} <br></p>
         </div>
         <div class="sm:w-1/2 mb-10 px-4" id="motor">
@@ -242,65 +243,67 @@
           <div class="rounded-lg h-64 overflow-hidden">
             <img alt="content" class="object-cover object-center h-full w-full" src="img/lcd.png">
           </div>
-          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Temperature Display on 16×2 LCD Module</h2>
+          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Temperature Display on 16×2 LCD Module
+          </h2>
           <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding: 10px;">
-              #include&lt;LiquidCrystal.h&gt; <br>
-              LiquidCrystal lcd(12, 11, 5, 4, 3, 2);  <br>
-              const int sensor=A1; &nbsp;&nbsp;&nbsp;&nbsp; // Assigning analog pin A1 to variable 'sensor' <br>
-              float tempc;  &nbsp;&nbsp;&nbsp;&nbsp; //variable to store temperature in degree Celsius <br>
-              float tempf;  &nbsp;&nbsp;&nbsp;&nbsp; //variable to store temperature in Fahreinheit  <br>
-              float vout;  &nbsp;&nbsp;&nbsp;&nbsp; //temporary variable to hold sensor reading <br>
-              void setup(){ <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;  pinMode(sensor,INPUT); &nbsp;&nbsp;&nbsp;&nbsp; // Configuring pin A1 as input <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;  Serial.begin(9600); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;  lcd.begin(16,2);   <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;  delay(500); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;} <br>
-               <br>
-              void loop(){ <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;  vout=analogRead(sensor); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;  vout=((vout*5/1024)-0.5)*100; <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;  tempc=vout; &nbsp;&nbsp;&nbsp;&nbsp; // Storing value in Degree Celsius <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;  tempf=(vout*1.8)+32; &nbsp;&nbsp;&nbsp;&nbsp; // Converting to Fahrenheit <br> 
-              &nbsp;&nbsp;&nbsp;&nbsp;  lcd.setCursor(0,0); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;  lcd.print("in DegreeC= "); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;  lcd.print(tempc); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;  lcd.setCursor(0,1); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;  lcd.print("in Fahrenheit="); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;  lcd.print(tempf); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;  delay(1000); &nbsp;&nbsp;&nbsp;&nbsp; //Delay of 1 second for ease of viewing in serial monitor <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;} <br></p>
+            #include&lt;LiquidCrystal.h&gt; <br>
+            LiquidCrystal lcd(12, 11, 5, 4, 3, 2); <br>
+            const int sensor=A1; &nbsp;&nbsp;&nbsp;&nbsp; // Assigning analog pin A1 to variable 'sensor' <br>
+            float tempc; &nbsp;&nbsp;&nbsp;&nbsp; //variable to store temperature in degree Celsius <br>
+            float tempf; &nbsp;&nbsp;&nbsp;&nbsp; //variable to store temperature in Fahreinheit <br>
+            float vout; &nbsp;&nbsp;&nbsp;&nbsp; //temporary variable to hold sensor reading <br>
+            void setup(){ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(sensor,INPUT); &nbsp;&nbsp;&nbsp;&nbsp; // Configuring pin A1 as input <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; Serial.begin(9600); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; lcd.begin(16,2); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; delay(500); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
+            <br>
+            void loop(){ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; vout=analogRead(sensor); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; vout=((vout*5/1024)-0.5)*100; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; tempc=vout; &nbsp;&nbsp;&nbsp;&nbsp; // Storing value in Degree Celsius <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; tempf=(vout*1.8)+32; &nbsp;&nbsp;&nbsp;&nbsp; // Converting to Fahrenheit <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; lcd.setCursor(0,0); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; lcd.print("in DegreeC= "); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; lcd.print(tempc); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; lcd.setCursor(0,1); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; lcd.print("in Fahrenheit="); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; lcd.print(tempf); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); &nbsp;&nbsp;&nbsp;&nbsp; //Delay of 1 second for ease of viewing in
+            serial monitor <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;} <br></p>
         </div>
         <div class="sm:w-1/2 mb-10 px-4" id="temp-buzz">
           <div class="rounded-lg h-64 overflow-hidden">
             <img alt="content" class="object-cover object-center h-full w-full" src="img/tmp-buzz.png">
           </div>
-          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Temperature Display on 16×2 LCD Module with buzzer</h2>
+          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Temperature Display on 16×2 LCD Module
+            with buzzer</h2>
           <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding: 10px;">
             #include&lt;LiquidCrystal.h&gt; <br>
             LiquidCrystal lcd(12, 11, 5, 4, 3, 2); <br>
-            const int sensor=A1; <br>     
-            float tempc; <br>      
-            float tempf; <br>      
-            float vout; <br>      
+            const int sensor=A1; <br>
+            float tempc; <br>
+            float tempf; <br>
+            float vout; <br>
             void setup() { <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;pinMode(sensor,INPUT); <br>      
-              &nbsp;&nbsp;&nbsp;&nbsp;pinMode(6,OUTPUT); <br> 
-              &nbsp;&nbsp;&nbsp;&nbsp;Serial.begin(9600); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;lcd.begin(16,2); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;delay(50); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;pinMode(sensor,INPUT); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;pinMode(6,OUTPUT); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Serial.begin(9600); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;lcd.begin(16,2); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;delay(50); <br>
             } <br>
-             <br>
             void loop() { <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;vout=analogRead(sensor); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;vout=((vout*5/1024)-0.5)*100; <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;tempc=vout; <br>      
-              &nbsp;&nbsp;&nbsp;&nbsp;tempf=(vout*1.8)+32; <br>      
-              &nbsp;&nbsp;&nbsp;&nbsp;if (tempc < 39) { <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;noTone(6); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;vout=analogRead(sensor); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;vout=((vout*5/1024)-0.5)*100; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;tempc=vout; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;tempf=(vout*1.8)+32; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;if (tempc < 39) { <br>
+              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;noTone(6); <br>
               &nbsp;&nbsp;&nbsp;&nbsp;} <br>
               &nbsp;&nbsp;&nbsp;&nbsp;else { <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;tone(6, 225); <br>
+              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;tone(6, 225); <br>
               &nbsp;&nbsp;&nbsp;&nbsp;} <br>
               &nbsp;&nbsp;&nbsp;&nbsp;lcd.setCursor(0,0); <br>
               &nbsp;&nbsp;&nbsp;&nbsp;lcd.print("in DegreeC= "); <br>
@@ -308,8 +311,48 @@
               &nbsp;&nbsp;&nbsp;&nbsp;lcd.setCursor(0,1); <br>
               &nbsp;&nbsp;&nbsp;&nbsp;lcd.print("in Fahrenheit="); <br>
               &nbsp;&nbsp;&nbsp;&nbsp;lcd.print(tempf); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;delay(100); <br>     
+              &nbsp;&nbsp;&nbsp;&nbsp;delay(100); <br>
               } <br></p>
+        </div>
+        <div class="sm:w-1/2 mb-10 px-4" id="ultrasonic">
+          <div class="rounded-lg h-64 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full" src="img/ultrasonic.png">
+          </div>
+          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Ultrasonic Distance Sensor</h2>
+          <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding: 10px;">
+            #include &lt;LiquidCrystal.h&gt; <br>
+            LiquidCrystal lcd(12, 11, 5, 4, 3, 2); <br>
+            int cm; <br>
+            <br>
+            long readUltrasonicDistance(int triggerPin, int echoPin) { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(triggerPin, OUTPUT); // Clear the trigger <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(triggerPin, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; delayMicroseconds(2); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; // Sets the trigger pin to HIGH state for 10 microseconds <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(triggerPin, HIGH); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; delayMicroseconds(10); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(triggerPin, LOW); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(echoPin, INPUT); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; // Reads the echo pin, and returns the sound wave travel time in microseconds <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; return pulseIn(echoPin, HIGH); <br>
+            } <br>
+            void setup() { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; Serial.begin(9600); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; lcd.begin(16, 2); <br>
+            } <br>
+            <br>
+            void loop() { <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; cm = 0.01723 * readUltrasonicDistance(7, 7); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; inches = (cm / 2.54); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; lcd.setCursor(0, 0); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; lcd.print(inches); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; lcd.print(" in, "); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; lcd.setCursor(0, 1); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; lcd.print(cm); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; lcd.print(" cm"); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; Serial.print(cm); <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; delay(10); <br>
+            } <br></p>
         </div>
       </div>
     </div>

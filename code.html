@@ -41,54 +41,60 @@
             <img alt="content" class="object-cover object-center h-full w-full" src="img/blink.png">
           </div>
           <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">3 Blinking Leds</h2>
-          <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding: 10px;">
-            void setup() {<br>
-            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(13, OUTPUT); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(11, OUTPUT); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(12, OUTPUT); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;} <br><br>
-            void loop() { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(13, HIGH); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(11, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(12, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); // Wait for 1000 millisecond(s) <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(11, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(13, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(12, HIGH); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); // Wait for 1000 millisecond(s) <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(12, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(11, HIGH); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(13, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); // Wait for 1000 millisecond(s) <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;} <br></p>
+          <pre class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding-left: 10px;">
+            <code>
+void setup(){
+    pinMode(13, OUTPUT);
+    pinMode(11, OUTPUT);
+    pinMode(12, OUTPUT);
+}
+              
+void loop(){
+    digitalWrite(13, HIGH);
+    digitalWrite(11, LOW);
+    digitalWrite(12, LOW);
+    delay(1000);
+    digitalWrite(11, LOW);
+    digitalWrite(13, LOW);
+    digitalWrite(12, HIGH);
+    delay(1000);
+    digitalWrite(12, LOW);
+    digitalWrite(11, HIGH);
+    digitalWrite(13, LOW);
+    delay(1000);
+}
+            </code>
+          </pre>
         </div>
         <div class="sm:w-1/2 mb-10 px-4" id="rgb">
           <div class="rounded-lg h-64 overflow-hidden">
             <img alt="content" class="object-cover object-center h-full w-full" src="img/rgb.png">
           </div>
           <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">RGB Led blinking</h2>
-          <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding: 10px;">
-            void setup() { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(11, OUTPUT); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(10, OUTPUT); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(9, OUTPUT); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
-            <br>
-            void loop() { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(11, 255); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(10, 0); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(9, 0); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(11, 0); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(10, 255); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(9, 0); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(11, 0); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(10, 0); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(9, 255); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
-          </p>
+          <pre class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding-left: 10px;">
+            <code>
+void setup(){
+    pinMode(11, OUTPUT);
+    pinMode(10, OUTPUT);
+    pinMode(9, OUTPUT);
+}
+
+void loop(){
+    analogWrite(11, 255);
+    analogWrite(10, 0);
+    analogWrite(9, 0);
+    delay(1000);
+    analogWrite(11, 0);
+    analogWrite(10, 255);
+    analogWrite(9, 0);
+    delay(1000);
+    analogWrite(11, 0);
+    analogWrite(10, 0);
+    analogWrite(9, 255);
+    delay(1000);
+}
+            </code>
+          </pre>
         </div>
       </div>
       <br>
@@ -98,64 +104,78 @@
             <img alt="content" class="object-cover object-center h-full w-full" src="img/pir.png">
           </div>
           <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Burglar Alarm using PIR Sensor</h2>
-          <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding: 10px;">
-            #define led 4 <br>
-            #define buzzer 5 <br>
-            #define sensor A0 <br>
-            int sound = 250; <br>
-            void setup() { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; Serial.begin(5600); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(sensor, INPUT); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(buzzer, OUTPUT); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(led, OUTPUT); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;} <br> <br>
-            void loop() { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; int detect = digitalRead(sensor); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; if (detect == HIGH) { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(led, HIGH); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; tone(buzzer, sound); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;} <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; else { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(led, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; noTone(buzzer); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;} <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; delay(100); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
-          </p>
+          <pre class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding-left: 10px;">
+            <code>
+float temp = 0;
+
+void setup(){
+    pinMode(A0, INPUT);
+    pinMode(13, OUTPUT);
+    pinMode(12, OUTPUT);
+    pinMode(11, OUTPUT);
+    pinMode(10, OUTPUT);
+}
+
+void loop(){
+    temp = analogRead(A0);
+    temp = ((temp*5/1023)-0.5)*100;
+    if (temp <10){
+        noTone(13);
+        digitalWrite(11, HIGH);
+        digitalWrite(10, LOW);
+        digitalWrite(12, LOW);
+    }
+    else if (temp <50 && temp>=10){
+        tone(13, 95);
+        digitalWrite(10, HIGH);
+        digitalWrite(11, LOW);
+        digitalWrite(12, LOW);
+    }
+    else{
+        tone(13, 225);
+        digitalWrite(12, HIGH);
+        digitalWrite(10, LOW);
+        digitalWrite(11, LOW);
+    }
+    delay(10);
+}
+            </code>
+          </pre>
         </div>
         <div class="sm:w-1/2 mb-10 px-4" id="ir">
           <div class="rounded-lg h-64 overflow-hidden">
             <img alt="content" class="object-cover object-center h-full w-full" src="img/ir.png">
           </div>
           <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Burglar Alarm using IR Sensor</h2>
-          <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding: 10px;">
-            #define led 4 &nbsp;&nbsp;&nbsp;&nbsp; // led at pin 4 <br>
-            #define buzzer 5 &nbsp;&nbsp;&nbsp;&nbsp; // buzzer at pin 5 <br>
-            #define sensor 6 &nbsp;&nbsp;&nbsp;&nbsp; // ir sensor at pin 6 <br>
-            int sound=250; &nbsp;&nbsp;&nbsp;&nbsp; // set buzzer sound <br>
-            void setup() { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; Serial.begin(9600); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(sensor,INPUT); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(led,OUTPUT); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(buzzer,OUTPUT); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; } <br>
-            <br>
-            void loop(){ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; int detect=digitalRead(sensor); &nbsp;&nbsp;&nbsp;&nbsp; // read status of sensor
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; if(detect==HIGH) { &nbsp;&nbsp;&nbsp;&nbsp;// if sensor detects obstacle <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(led,HIGH); &nbsp;&nbsp;&nbsp;&nbsp; // led on
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; tone(buzzer,sound); &nbsp;&nbsp;&nbsp;&nbsp; // buzzer
-            sounds <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;} <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; else{ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(led,LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; noTone(buzzer); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;} <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; delay(300); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; } <br>
-          </p>
+          <pre class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding-left: 10px;">
+            <code>
+#define led 4
+#define buzzer 5
+#define sensor 6
+int sound = 250;
+void setup(){
+    Serial.begin(9600);
+    pinMode(sensor, INPUT);
+    pinMode(led, OUTPUT);
+    pinMode(buzzer, OUTPUT);
+}
+
+void loop(){
+    int detect = digitalRead(sensor);
+    if (detect == HIGH)
+    {
+        digitalWrite(led, HIGH);
+        tone(buzzer, sound);
+    }
+    else
+    {
+        digitalWrite(led, LOW);
+        noTone(buzzer);
+    }
+    delay(300);
+}
+            </code>
+          </pre>
         </div>
       </div>
       <br>
@@ -165,76 +185,112 @@
             <img alt="content" class="object-cover object-center h-full w-full" src="img/temprature.png">
           </div>
           <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Temperature Reflector</h2>
-          <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align:left; padding: 10px;">
-            float temp = 0; <br>
-            void setup() { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(A0, INPUT); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(13, OUTPUT); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(12, OUTPUT); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(11, OUTPUT); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(10, OUTPUT); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
-            void loop(){ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;temp = analogRead(A0); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;temp = ((temp*5/1023)-0.5)*100; <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;if (temp < 10) { <br>
-              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; noTone(13); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(11, HIGH); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(10, LOW); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(12, LOW); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;} <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;else if (temp <50 && temp>=10) { <br>
-                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; tone(13, 95); <br>
-                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(10, HIGH); <br>
-                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(11, LOW); <br>
-                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(12, LOW); <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;} <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;else { <br>
-                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; tone(13, 225); <br>
-                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(12, HIGH); <br>
-                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(10, LOW); <br>
-                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(11, LOW); <br>
-                &nbsp;&nbsp;&nbsp;&nbsp; } <br>
-                &nbsp;&nbsp;&nbsp;&nbsp; delay(10); &nbsp;&nbsp;&nbsp;&nbsp; // Delay a little bit to improve simulation
-                performance <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;} <br></p>
+          <pre class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding-left: 10px;">
+            <code>
+float temp = 0;
+
+void setup(){
+    pinMode(A0, INPUT);
+    pinMode(13, OUTPUT);
+    pinMode(12, OUTPUT);
+    pinMode(11, OUTPUT);
+    pinMode(10, OUTPUT);
+}
+
+void loop(){
+    temp = analogRead(A0);
+    temp = ((temp*5/1023)-0.5)*100;
+    if (temp <10){
+        noTone(13);
+        digitalWrite(11, HIGH);
+        digitalWrite(10, LOW);
+        digitalWrite(12, LOW);
+    }
+    else if (temp <50 && temp>=10){
+        tone(13, 95);
+        digitalWrite(10, HIGH);
+        digitalWrite(11, LOW);
+        digitalWrite(12, LOW);
+    }
+    else{
+        tone(13, 225);
+        digitalWrite(12, HIGH);
+        digitalWrite(10, LOW);
+        digitalWrite(11, LOW);
+    }
+    delay(10);
+}
+            </code>
+          </pre>
         </div>
         <div class="sm:w-1/2 mb-10 px-4" id="motor">
           <div class="rounded-lg h-64 overflow-hidden">
             <img alt="content" class="object-cover object-center h-full w-full" src="img/motor.png">
           </div>
           <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Speed control of D.C. Motor</h2>
-          <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding: 10px;">
-            void loop() { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; directionControl(); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; speedControl(); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; } <br>
-            void directionControl() { &nbsp;&nbsp;&nbsp;&nbsp; // Set motors to maximum speed <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(9, 255); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; analogWrite(3, 255); <br>
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; // Turn on motor A & B <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(8, HIGH); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(7, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(5, HIGH); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(4, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; delay(2000); <br>
-            <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; // Now change motor directions <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(8, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(7, HIGH); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(5, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(4, HIGH); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; delay(2000); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; // Turn off motors <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(8, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(7, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(5, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(4, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;} <br></p>
+          <pre class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding-left: 10px;">
+            <code>
+void setup() {
+    pinMode(9, OUTPUT);
+    pinMode(3, OUTPUT);
+    pinMode(8, OUTPUT);
+    pinMode(7, OUTPUT);
+    pinMode(5, OUTPUT);
+    pinMode(4, OUTPUT);	
+    digitalWrite(8, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(4, LOW);
+}
+void loop() {
+    directionControl();
+    delay(1000);
+    speedControl();
+    delay(1000);
+}
+void directionControl() {
+    analogWrite(9, 255);
+    analogWrite(3, 255);
+    digitalWrite(8, HIGH);
+    digitalWrite(7, LOW);
+    digitalWrite(5, HIGH);
+    digitalWrite(4, LOW);
+    delay(2000);	
+    digitalWrite(8, LOW);
+    digitalWrite(7, HIGH);
+    digitalWrite(5, LOW);
+    digitalWrite(4, HIGH);
+    delay(2000);	
+    digitalWrite(8, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(4, LOW);
+}
+
+void speedControl() {
+    digitalWrite(8, LOW);
+    digitalWrite(7, HIGH);
+    digitalWrite(5, LOW);
+    digitalWrite(4, HIGH);
+  
+    for (int i = 0; i < 256; i++) {
+        analogWrite(9, i);
+        analogWrite(3, i);
+        delay(20);
+    }
+    for (int i = 255; i >= 0; --i) {
+        analogWrite(9, i);
+        analogWrite(3, i);
+        delay(20);
+    }
+                
+    digitalWrite(8, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(4, LOW);
+}
+            </code>
+          </pre>
         </div>
       </div>
       <br>
@@ -245,34 +301,41 @@
           </div>
           <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Temperature Display on 16×2 LCD Module
           </h2>
-          <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding: 10px;">
-            #include&lt;LiquidCrystal.h&gt; <br>
-            LiquidCrystal lcd(12, 11, 5, 4, 3, 2); <br>
-            const int sensor=A1; &nbsp;&nbsp;&nbsp;&nbsp; // Assigning analog pin A1 to variable 'sensor' <br>
-            float tempc; &nbsp;&nbsp;&nbsp;&nbsp; //variable to store temperature in degree Celsius <br>
-            float tempf; &nbsp;&nbsp;&nbsp;&nbsp; //variable to store temperature in Fahreinheit <br>
-            float vout; &nbsp;&nbsp;&nbsp;&nbsp; //temporary variable to hold sensor reading <br>
-            void setup(){ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(sensor,INPUT); &nbsp;&nbsp;&nbsp;&nbsp; // Configuring pin A1 as input <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; Serial.begin(9600); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; lcd.begin(16,2); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; delay(500); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;} <br>
-            <br>
-            void loop(){ <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; vout=analogRead(sensor); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; vout=((vout*5/1024)-0.5)*100; <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; tempc=vout; &nbsp;&nbsp;&nbsp;&nbsp; // Storing value in Degree Celsius <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; tempf=(vout*1.8)+32; &nbsp;&nbsp;&nbsp;&nbsp; // Converting to Fahrenheit <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; lcd.setCursor(0,0); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; lcd.print("in DegreeC= "); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; lcd.print(tempc); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; lcd.setCursor(0,1); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; lcd.print("in Fahrenheit="); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; lcd.print(tempf); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; delay(1000); &nbsp;&nbsp;&nbsp;&nbsp; //Delay of 1 second for ease of viewing in
-            serial monitor <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;} <br></p>
+          <pre class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding-left: 10px;">
+            <code>
+#include &lt;LiquidCrystal.h&gt;
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+int cm;
+
+long readUltrasonicDistance(int triggerPin, int echoPin) {
+    pinMode(triggerPin, OUTPUT);
+    digitalWrite(triggerPin, LOW);
+    delayMicroseconds(2);
+    digitalWrite(triggerPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(triggerPin, LOW);
+    pinMode(echoPin, INPUT);
+    return pulseIn(echoPin, HIGH);
+}
+void setup() {
+    Serial.begin(9600);
+    lcd.begin(16, 2);
+}
+
+void loop() {
+    cm = 0.01723 * readUltrasonicDistance(7, 7);
+    inches = (cm / 2.54);
+    lcd.setCursor(0, 0);
+    lcd.print(inches);
+    lcd.print(" in, ");
+    lcd.setCursor(0, 1);
+    lcd.print(cm);
+    lcd.print(" cm");
+    Serial.print(cm);
+    delay(10);
+}
+            </code>
+          </pre>
         </div>
         <div class="sm:w-1/2 mb-10 px-4" id="temp-buzz">
           <div class="rounded-lg h-64 overflow-hidden">
@@ -280,79 +343,112 @@
           </div>
           <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Temperature Display on 16×2 LCD Module
             with buzzer</h2>
-          <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding: 10px;">
-            #include&lt;LiquidCrystal.h&gt; <br>
-            LiquidCrystal lcd(12, 11, 5, 4, 3, 2); <br>
-            const int sensor=A1; <br>
-            float tempc; <br>
-            float tempf; <br>
-            float vout; <br>
-            void setup() { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;pinMode(sensor,INPUT); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;pinMode(6,OUTPUT); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;Serial.begin(9600); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;lcd.begin(16,2); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;delay(50); <br>
-            } <br>
-            void loop() { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;vout=analogRead(sensor); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;vout=((vout*5/1024)-0.5)*100; <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;tempc=vout; <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;tempf=(vout*1.8)+32; <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;if (tempc < 39) { <br>
-              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;noTone(6); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;} <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;else { <br>
-              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;tone(6, 225); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;} <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;lcd.setCursor(0,0); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;lcd.print("in DegreeC= "); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;lcd.print(tempc); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;lcd.setCursor(0,1); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;lcd.print("in Fahrenheit="); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;lcd.print(tempf); <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;delay(100); <br>
-              } <br></p>
+            <pre class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding-left: 10px;">
+              <code>
+#include &lt;LiquidCrystal.h&gt;
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+const int sensor = A1;
+float tempc;
+float tempf;
+float vout;
+void setup(){
+    pinMode(sensor, INPUT);
+    pinMode(6, OUTPUT);
+    Serial.begin(9600);
+    lcd.begin(16, 2);
+    delay(500);
+}
+
+void loop(){
+    vout = analogRead(sensor);
+    vout = ((vout * 5 / 1024) - 0.5) * 100;
+    tempc = vout;
+    tempf = (vout * 1.8) + 32;
+    if (tempc < 39){
+        noTone(6);
+    }
+    else{
+        tone(6, 225);
+    }
+    lcd.setCursor(0, 0);
+    lcd.print("in DegreeC= ");
+    lcd.print(tempc);
+    lcd.setCursor(0, 1);
+    lcd.print("in Fahrenheit=");
+    lcd.print(tempf);
+    delay(1000);
+}
+              </code>
+            </pre>
         </div>
         <div class="sm:w-1/2 mb-10 px-4" id="ultrasonic">
           <div class="rounded-lg h-64 overflow-hidden">
             <img alt="content" class="object-cover object-center h-full w-full" src="img/ultrasonic.png">
           </div>
           <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Ultrasonic Distance Sensor</h2>
-          <p class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding: 10px;">
-            #include &lt;LiquidCrystal.h&gt; <br>
-            LiquidCrystal lcd(12, 11, 5, 4, 3, 2); <br>
-            int cm; <br>
-            <br>
-            long readUltrasonicDistance(int triggerPin, int echoPin) { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(triggerPin, OUTPUT); // Clear the trigger <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(triggerPin, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; delayMicroseconds(2); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; // Sets the trigger pin to HIGH state for 10 microseconds <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(triggerPin, HIGH); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; delayMicroseconds(10); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; digitalWrite(triggerPin, LOW); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; pinMode(echoPin, INPUT); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; // Reads the echo pin, and returns the sound wave travel time in microseconds <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; return pulseIn(echoPin, HIGH); <br>
-            } <br>
-            void setup() { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; Serial.begin(9600); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; lcd.begin(16, 2); <br>
-            } <br>
-            <br>
-            void loop() { <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; cm = 0.01723 * readUltrasonicDistance(7, 7); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; inches = (cm / 2.54); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; lcd.setCursor(0, 0); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; lcd.print(inches); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; lcd.print(" in, "); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; lcd.setCursor(0, 1); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; lcd.print(cm); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; lcd.print(" cm"); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; Serial.print(cm); <br>
-            &nbsp;&nbsp;&nbsp;&nbsp; delay(10); <br>
-            } <br></p>
+          <pre class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding-left: 10px;">
+            <code>
+#include &lt;LiquidCrystal.h&gt;
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+int inches;
+int cm;
+
+long readUltrasonicDistance(int triggerPin, int echoPin){
+    pinMode(triggerPin, OUTPUT); 
+    digitalWrite(triggerPin, LOW);
+    delayMicroseconds(2);
+    digitalWrite(triggerPin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(triggerPin, LOW);
+    pinMode(echoPin, INPUT);
+    return pulseIn(echoPin, HIGH);
+}
+void setup() {
+    Serial.begin(9600);
+    lcd.begin(16, 2);
+}
+
+void loop() {
+    cm = 0.01723 * readUltrasonicDistance(7, 7);
+    inches = (cm / 2.54);
+    lcd.setCursor(0, 0);
+    lcd.print(inches);
+    lcd.print(" in, ");
+    lcd.setCursor(0, 1);
+    lcd.print(cm);
+    lcd.print(" cm");
+    Serial.print(cm);
+    delay(10);
+}              
+            </code>
+          </pre>
+        </div>
+
+        <div class="sm:w-1/2 mb-10 px-4" id="decorate">
+          <div class="rounded-lg h-64 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full" src="img/decorate.png">
+          </div>
+          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">LED Decoration</h2>
+          <pre class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding-left: 10px;">
+              <code>
+void setup(){
+  for (int i = 7; i <= 13; i++){
+    pinMode(i, OUTPUT);
+  }
+}
+
+void loop(){
+  for (int i = 7; i <= 13; i++){
+    digitalWrite(i, HIGH);
+    delay(100);
+  }
+  for (int i = 7; i <= 13; i++){
+    digitalWrite(i, LOW);
+    delay(100);
+  }
+}
+              </code>
+            </pre>
         </div>
       </div>
     </div>

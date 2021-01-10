@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+  
 </head>
 
 <body>
@@ -41,60 +42,14 @@
             <img alt="content" class="object-cover object-center h-full w-full" src="img/blink.png">
           </div>
           <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">3 Blinking Leds</h2>
-          <pre class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding-left: 10px;">
-            <code>
-void setup(){
-    pinMode(13, OUTPUT);
-    pinMode(11, OUTPUT);
-    pinMode(12, OUTPUT);
-}
-              
-void loop(){
-    digitalWrite(13, HIGH);
-    digitalWrite(11, LOW);
-    digitalWrite(12, LOW);
-    delay(1000);
-    digitalWrite(11, LOW);
-    digitalWrite(13, LOW);
-    digitalWrite(12, HIGH);
-    delay(1000);
-    digitalWrite(12, LOW);
-    digitalWrite(11, HIGH);
-    digitalWrite(13, LOW);
-    delay(1000);
-}
-            </code>
-          </pre>
+          <script src="https://gist.github.com/g-paras/caf34354fb2b6f4bb2d5e6d1e994535a.js"></script>
         </div>
         <div class="sm:w-1/2 mb-10 px-4" id="rgb">
           <div class="rounded-lg h-64 overflow-hidden">
             <img alt="content" class="object-cover object-center h-full w-full" src="img/rgb.png">
           </div>
           <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">RGB Led blinking</h2>
-          <pre class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding-left: 10px;">
-            <code>
-void setup(){
-    pinMode(11, OUTPUT);
-    pinMode(10, OUTPUT);
-    pinMode(9, OUTPUT);
-}
-
-void loop(){
-    analogWrite(11, 255);
-    analogWrite(10, 0);
-    analogWrite(9, 0);
-    delay(1000);
-    analogWrite(11, 0);
-    analogWrite(10, 255);
-    analogWrite(9, 0);
-    delay(1000);
-    analogWrite(11, 0);
-    analogWrite(10, 0);
-    analogWrite(9, 255);
-    delay(1000);
-}
-            </code>
-          </pre>
+          <script src="https://gist.github.com/g-paras/60d2440a485c10460e5a158905e42b4e.js"></script>
         </div>
       </div>
       <br>
@@ -104,78 +59,14 @@ void loop(){
             <img alt="content" class="object-cover object-center h-full w-full" src="img/pir.png">
           </div>
           <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Burglar Alarm using PIR Sensor</h2>
-          <pre class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding-left: 10px;">
-            <code>
-float temp = 0;
-
-void setup(){
-    pinMode(A0, INPUT);
-    pinMode(13, OUTPUT);
-    pinMode(12, OUTPUT);
-    pinMode(11, OUTPUT);
-    pinMode(10, OUTPUT);
-}
-
-void loop(){
-    temp = analogRead(A0);
-    temp = ((temp*5/1023)-0.5)*100;
-    if (temp <10){
-        noTone(13);
-        digitalWrite(11, HIGH);
-        digitalWrite(10, LOW);
-        digitalWrite(12, LOW);
-    }
-    else if (temp <50 && temp>=10){
-        tone(13, 95);
-        digitalWrite(10, HIGH);
-        digitalWrite(11, LOW);
-        digitalWrite(12, LOW);
-    }
-    else{
-        tone(13, 225);
-        digitalWrite(12, HIGH);
-        digitalWrite(10, LOW);
-        digitalWrite(11, LOW);
-    }
-    delay(10);
-}
-            </code>
-          </pre>
+          <script src="https://gist.github.com/g-paras/685920f442093be65bdfe9aa66f6bd18.js"></script>
         </div>
         <div class="sm:w-1/2 mb-10 px-4" id="ir">
           <div class="rounded-lg h-64 overflow-hidden">
             <img alt="content" class="object-cover object-center h-full w-full" src="img/ir.png">
           </div>
           <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Burglar Alarm using IR Sensor</h2>
-          <pre class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding-left: 10px;">
-            <code>
-#define led 4
-#define buzzer 5
-#define sensor 6
-int sound = 250;
-void setup(){
-    Serial.begin(9600);
-    pinMode(sensor, INPUT);
-    pinMode(led, OUTPUT);
-    pinMode(buzzer, OUTPUT);
-}
-
-void loop(){
-    int detect = digitalRead(sensor);
-    if (detect == HIGH)
-    {
-        digitalWrite(led, HIGH);
-        tone(buzzer, sound);
-    }
-    else
-    {
-        digitalWrite(led, LOW);
-        noTone(buzzer);
-    }
-    delay(300);
-}
-            </code>
-          </pre>
+          <script src="https://gist.github.com/g-paras/c694f871aa7e8d1f74f6237a5f0f6a7e.js"></script>
         </div>
       </div>
       <br>
@@ -185,112 +76,14 @@ void loop(){
             <img alt="content" class="object-cover object-center h-full w-full" src="img/temprature.png">
           </div>
           <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Temperature Reflector</h2>
-          <pre class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding-left: 10px;">
-            <code>
-float temp = 0;
-
-void setup(){
-    pinMode(A0, INPUT);
-    pinMode(13, OUTPUT);
-    pinMode(12, OUTPUT);
-    pinMode(11, OUTPUT);
-    pinMode(10, OUTPUT);
-}
-
-void loop(){
-    temp = analogRead(A0);
-    temp = ((temp*5/1023)-0.5)*100;
-    if (temp <10){
-        noTone(13);
-        digitalWrite(11, HIGH);
-        digitalWrite(10, LOW);
-        digitalWrite(12, LOW);
-    }
-    else if (temp <50 && temp>=10){
-        tone(13, 95);
-        digitalWrite(10, HIGH);
-        digitalWrite(11, LOW);
-        digitalWrite(12, LOW);
-    }
-    else{
-        tone(13, 225);
-        digitalWrite(12, HIGH);
-        digitalWrite(10, LOW);
-        digitalWrite(11, LOW);
-    }
-    delay(10);
-}
-            </code>
-          </pre>
+          <script src="https://gist.github.com/g-paras/bc7d43f17355eb90f74cbe7c360b1b75.js"></script>
         </div>
         <div class="sm:w-1/2 mb-10 px-4" id="motor">
           <div class="rounded-lg h-64 overflow-hidden">
             <img alt="content" class="object-cover object-center h-full w-full" src="img/motor.png">
           </div>
           <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Speed control of D.C. Motor</h2>
-          <pre class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding-left: 10px;">
-            <code>
-void setup() {
-    pinMode(9, OUTPUT);
-    pinMode(3, OUTPUT);
-    pinMode(8, OUTPUT);
-    pinMode(7, OUTPUT);
-    pinMode(5, OUTPUT);
-    pinMode(4, OUTPUT);	
-    digitalWrite(8, LOW);
-    digitalWrite(7, LOW);
-    digitalWrite(5, LOW);
-    digitalWrite(4, LOW);
-}
-void loop() {
-    directionControl();
-    delay(1000);
-    speedControl();
-    delay(1000);
-}
-void directionControl() {
-    analogWrite(9, 255);
-    analogWrite(3, 255);
-    digitalWrite(8, HIGH);
-    digitalWrite(7, LOW);
-    digitalWrite(5, HIGH);
-    digitalWrite(4, LOW);
-    delay(2000);	
-    digitalWrite(8, LOW);
-    digitalWrite(7, HIGH);
-    digitalWrite(5, LOW);
-    digitalWrite(4, HIGH);
-    delay(2000);	
-    digitalWrite(8, LOW);
-    digitalWrite(7, LOW);
-    digitalWrite(5, LOW);
-    digitalWrite(4, LOW);
-}
-
-void speedControl() {
-    digitalWrite(8, LOW);
-    digitalWrite(7, HIGH);
-    digitalWrite(5, LOW);
-    digitalWrite(4, HIGH);
-  
-    for (int i = 0; i < 256; i++) {
-        analogWrite(9, i);
-        analogWrite(3, i);
-        delay(20);
-    }
-    for (int i = 255; i >= 0; --i) {
-        analogWrite(9, i);
-        analogWrite(3, i);
-        delay(20);
-    }
-                
-    digitalWrite(8, LOW);
-    digitalWrite(7, LOW);
-    digitalWrite(5, LOW);
-    digitalWrite(4, LOW);
-}
-            </code>
-          </pre>
+          <script src="https://gist.github.com/g-paras/552236490caaad1531703497b5a09a8f.js"></script>
         </div>
       </div>
       <br>
@@ -301,41 +94,7 @@ void speedControl() {
           </div>
           <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Temperature Display on 16×2 LCD Module
           </h2>
-          <pre class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding-left: 10px;">
-            <code>
-#include &lt;LiquidCrystal.h&gt;
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
-int cm;
-
-long readUltrasonicDistance(int triggerPin, int echoPin) {
-    pinMode(triggerPin, OUTPUT);
-    digitalWrite(triggerPin, LOW);
-    delayMicroseconds(2);
-    digitalWrite(triggerPin, HIGH);
-    delayMicroseconds(10);
-    digitalWrite(triggerPin, LOW);
-    pinMode(echoPin, INPUT);
-    return pulseIn(echoPin, HIGH);
-}
-void setup() {
-    Serial.begin(9600);
-    lcd.begin(16, 2);
-}
-
-void loop() {
-    cm = 0.01723 * readUltrasonicDistance(7, 7);
-    inches = (cm / 2.54);
-    lcd.setCursor(0, 0);
-    lcd.print(inches);
-    lcd.print(" in, ");
-    lcd.setCursor(0, 1);
-    lcd.print(cm);
-    lcd.print(" cm");
-    Serial.print(cm);
-    delay(10);
-}
-            </code>
-          </pre>
+          <script src="https://gist.github.com/g-paras/150f1264ffdc4d3ca44fc948dc870009.js"></script>
         </div>
         <div class="sm:w-1/2 mb-10 px-4" id="temp-buzz">
           <div class="rounded-lg h-64 overflow-hidden">
@@ -343,85 +102,14 @@ void loop() {
           </div>
           <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Temperature Display on 16×2 LCD Module
             with buzzer</h2>
-            <pre class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding-left: 10px;">
-              <code>
-#include &lt;LiquidCrystal.h&gt;
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
-const int sensor = A1;
-float tempc;
-float tempf;
-float vout;
-void setup(){
-    pinMode(sensor, INPUT);
-    pinMode(6, OUTPUT);
-    Serial.begin(9600);
-    lcd.begin(16, 2);
-    delay(500);
-}
-
-void loop(){
-    vout = analogRead(sensor);
-    vout = ((vout * 5 / 1024) - 0.5) * 100;
-    tempc = vout;
-    tempf = (vout * 1.8) + 32;
-    if (tempc < 39){
-        noTone(6);
-    }
-    else{
-        tone(6, 225);
-    }
-    lcd.setCursor(0, 0);
-    lcd.print("in DegreeC= ");
-    lcd.print(tempc);
-    lcd.setCursor(0, 1);
-    lcd.print("in Fahrenheit=");
-    lcd.print(tempf);
-    delay(1000);
-}
-              </code>
-            </pre>
+            <script src="https://gist.github.com/g-paras/655bffce0c3942e0c9990be83b819c57.js"></script>
         </div>
         <div class="sm:w-1/2 mb-10 px-4" id="ultrasonic">
           <div class="rounded-lg h-64 overflow-hidden">
             <img alt="content" class="object-cover object-center h-full w-full" src="img/ultrasonic.png">
           </div>
           <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Ultrasonic Distance Sensor</h2>
-          <pre class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding-left: 10px;">
-            <code>
-#include &lt;LiquidCrystal.h&gt;
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
-int inches;
-int cm;
-
-long readUltrasonicDistance(int triggerPin, int echoPin){
-    pinMode(triggerPin, OUTPUT); 
-    digitalWrite(triggerPin, LOW);
-    delayMicroseconds(2);
-    digitalWrite(triggerPin, HIGH);
-    delayMicroseconds(10);
-    digitalWrite(triggerPin, LOW);
-    pinMode(echoPin, INPUT);
-    return pulseIn(echoPin, HIGH);
-}
-void setup() {
-    Serial.begin(9600);
-    lcd.begin(16, 2);
-}
-
-void loop() {
-    cm = 0.01723 * readUltrasonicDistance(7, 7);
-    inches = (cm / 2.54);
-    lcd.setCursor(0, 0);
-    lcd.print(inches);
-    lcd.print(" in, ");
-    lcd.setCursor(0, 1);
-    lcd.print(cm);
-    lcd.print(" cm");
-    Serial.print(cm);
-    delay(10);
-}              
-            </code>
-          </pre>
+          <script src="https://gist.github.com/g-paras/09cfddee8f8a5e9d5a817008affc8c57.js"></script>
         </div>
 
         <div class="sm:w-1/2 mb-10 px-4" id="decorate">
@@ -429,26 +117,7 @@ void loop() {
             <img alt="content" class="object-cover object-center h-full w-full" src="img/decorate.png">
           </div>
           <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">LED Decoration</h2>
-          <pre class="leading-relaxed text-base bg-gray-900 text-gray-500" style="text-align: left; padding-left: 10px;">
-              <code>
-void setup(){
-  for (int i = 7; i <= 13; i++){
-    pinMode(i, OUTPUT);
-  }
-}
-
-void loop(){
-  for (int i = 7; i <= 13; i++){
-    digitalWrite(i, HIGH);
-    delay(100);
-  }
-  for (int i = 7; i <= 13; i++){
-    digitalWrite(i, LOW);
-    delay(100);
-  }
-}
-              </code>
-            </pre>
+          <script src="https://gist.github.com/g-paras/694e31d829be3c1077e9ef3248c403e5.js"></script>
         </div>
       </div>
     </div>

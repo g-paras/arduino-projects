@@ -1,150 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Code for projects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+    <style>
+      .gist-data {
+        height: 450px;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <title>Code for projects</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-  
-</head>
+      @media only screen and (max-width: 600px) {
+        .gist-data {
+          width: 90vw;
+        }
+      }
+    </style>
+  </head>
 
-<body>
-  <header class="text-gray-500 bg-gray-900 body-font">
-    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-      <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
-        <img src="https://img.icons8.com/color/48/000000/arduino.png" />
-        <span class="ml-3 text-xl">Arduino</span>
-      </a>
-      <nav
-        class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
-        <a class="mr-5 hover:text-white" href="index.html">Projects</a>
-        <a class="mr-5 hover:text-white" href="#">Code</a>
-        <a class="mr-5 hover:text-white" href="#about">About</a>
-      </nav>
-      <a href="https://github.com/g-paras/arduino-projects">
-        <button
-          class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">GitHub
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </button></a>
-    </div>
-  </header>
+  <body>
+    <header class="text-gray-500 bg-gray-900 body-font">
+      <div
+        class="
+          container
+          mx-auto
+          flex flex-wrap
+          p-5
+          flex-col
+          md:flex-row
+          items-center
+        "
+      >
+        <a
+          class="
+            flex
+            title-font
+            font-medium
+            items-center
+            text-white
+            mb-4
+            md:mb-0
+          "
+        >
+          <img src="https://img.icons8.com/color/48/000000/arduino.png" />
+          <span class="ml-3 text-xl">Arduino</span>
+        </a>
+        <nav
+          class="
+            md:mr-auto
+            md:ml-4
+            md:py-1
+            md:pl-4
+            md:border-l md:border-gray-700
+            flex flex-wrap
+            items-center
+            text-base
+            justify-center
+          "
+        >
+          <a class="mr-5 hover:text-white" href="index.html">Projects</a>
+          <a class="mr-5 hover:text-white" href="#">Code</a>
+          <a class="mr-5 hover:text-white" href="#about">About</a>
+        </nav>
+        <a href="https://github.com/g-paras/arduino-projects">
+          <button
+            class="
+              inline-flex
+              items-center
+              bg-gray-800
+              border-0
+              py-1
+              px-3
+              focus:outline-none
+              hover:bg-gray-700
+              rounded
+              text-base
+              mt-4
+              md:mt-0
+            "
+          >
+            GitHub
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              class="w-4 h-4 ml-1"
+              viewBox="0 0 24 24"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg></button
+        ></a>
+      </div>
+    </header>
 
-  <section class="text-gray-700 body-font ">
-    <div class="container px-5 py-24 mx-auto">
-      <div class="flex flex-wrap -mx-4 -mb-10 text-center">
-        <div class="sm:w-1/2 mb-10 px-4 " id="blink">
-          <div class="rounded-lg h-64 overflow-hidden">
-            <img alt="content" class="object-cover object-center h-full w-full" src="img/blink.png">
+    <section class="text-gray-700 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+          <div class="sm:w-1/2 mb-10 px-4" id="blink">
+            <div class="rounded-lg h-64 overflow-hidden">
+              <img
+                alt="content"
+                class="object-cover object-center h-full w-full"
+                src="img/blink.png"
+              />
+            </div>
+            <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">
+              3 Blinking Leds
+            </h2>
+            <script src="https://gist.github.com/g-paras/caf34354fb2b6f4bb2d5e6d1e994535a.js"></script>
           </div>
-          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">3 Blinking Leds</h2>
-          <script src="https://gist.github.com/g-paras/caf34354fb2b6f4bb2d5e6d1e994535a.js"></script>
+          <div class="sm:w-1/2 mb-10 px-4" id="rgb">
+            <div class="rounded-lg h-64 overflow-hidden">
+              <img
+                alt="content"
+                class="object-cover object-center h-full w-full"
+                src="img/rgb.png"
+              />
+            </div>
+            <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">
+              RGB Led blinking
+            </h2>
+            <script src="https://gist.github.com/g-paras/60d2440a485c10460e5a158905e42b4e.js"></script>
+          </div>
         </div>
-        <div class="sm:w-1/2 mb-10 px-4" id="rgb">
-          <div class="rounded-lg h-64 overflow-hidden">
-            <img alt="content" class="object-cover object-center h-full w-full" src="img/rgb.png">
+        <br />
+        <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+          <div class="sm:w-1/2 mb-10 px-4" id="pir">
+            <div class="rounded-lg h-64 overflow-hidden">
+              <img
+                alt="content"
+                class="object-cover object-center h-full w-full"
+                src="img/pir.png"
+              />
+            </div>
+            <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">
+              Burglar Alarm using PIR Sensor
+            </h2>
+            <script src="https://gist.github.com/g-paras/685920f442093be65bdfe9aa66f6bd18.js"></script>
           </div>
-          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">RGB Led blinking</h2>
-          <script src="https://gist.github.com/g-paras/60d2440a485c10460e5a158905e42b4e.js"></script>
+          <div class="sm:w-1/2 mb-10 px-4" id="ir">
+            <div class="rounded-lg h-64 overflow-hidden">
+              <img
+                alt="content"
+                class="object-cover object-center h-full w-full"
+                src="img/ir.png"
+              />
+            </div>
+            <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">
+              Burglar Alarm using IR Sensor
+            </h2>
+            <script src="https://gist.github.com/g-paras/c694f871aa7e8d1f74f6237a5f0f6a7e.js"></script>
+          </div>
         </div>
-      </div>
-      <br>
-      <div class="flex flex-wrap -mx-4 -mb-10 text-center">
-        <div class="sm:w-1/2 mb-10 px-4" id="pir">
-          <div class="rounded-lg h-64 overflow-hidden">
-            <img alt="content" class="object-cover object-center h-full w-full" src="img/pir.png">
+        <br />
+        <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+          <div class="sm:w-1/2 mb-10 px-4" id="temperature">
+            <div class="rounded-lg h-64 overflow-hidden">
+              <img
+                alt="content"
+                class="object-cover object-center h-full w-full"
+                src="img/temprature.png"
+              />
+            </div>
+            <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">
+              Temperature Reflector
+            </h2>
+            <script src="https://gist.github.com/g-paras/bc7d43f17355eb90f74cbe7c360b1b75.js"></script>
           </div>
-          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Burglar Alarm using PIR Sensor</h2>
-          <script src="https://gist.github.com/g-paras/685920f442093be65bdfe9aa66f6bd18.js"></script>
+          <div class="sm:w-1/2 mb-10 px-4" id="motor">
+            <div class="rounded-lg h-64 overflow-hidden">
+              <img
+                alt="content"
+                class="object-cover object-center h-full w-full"
+                src="img/motor.png"
+              />
+            </div>
+            <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">
+              Speed control of D.C. Motor
+            </h2>
+            <script src="https://gist.github.com/g-paras/552236490caaad1531703497b5a09a8f.js"></script>
+          </div>
         </div>
-        <div class="sm:w-1/2 mb-10 px-4" id="ir">
-          <div class="rounded-lg h-64 overflow-hidden">
-            <img alt="content" class="object-cover object-center h-full w-full" src="img/ir.png">
+        <br />
+        <div class="flex flex-wrap -mx-4 -mb-10 text-center" id="lcd">
+          <div class="sm:w-1/2 mb-10 px-4" id="lcd">
+            <div class="rounded-lg h-64 overflow-hidden">
+              <img
+                alt="content"
+                class="object-cover object-center h-full w-full"
+                src="img/lcd.png"
+              />
+            </div>
+            <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">
+              Temperature Display on 16×2 LCD Module
+            </h2>
+            <script src="https://gist.github.com/g-paras/150f1264ffdc4d3ca44fc948dc870009.js"></script>
           </div>
-          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Burglar Alarm using IR Sensor</h2>
-          <script src="https://gist.github.com/g-paras/c694f871aa7e8d1f74f6237a5f0f6a7e.js"></script>
-        </div>
-      </div>
-      <br>
-      <div class="flex flex-wrap -mx-4 -mb-10 text-center">
-        <div class="sm:w-1/2 mb-10 px-4" id="temperature">
-          <div class="rounded-lg h-64 overflow-hidden">
-            <img alt="content" class="object-cover object-center h-full w-full" src="img/temprature.png">
-          </div>
-          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Temperature Reflector</h2>
-          <script src="https://gist.github.com/g-paras/bc7d43f17355eb90f74cbe7c360b1b75.js"></script>
-        </div>
-        <div class="sm:w-1/2 mb-10 px-4" id="motor">
-          <div class="rounded-lg h-64 overflow-hidden">
-            <img alt="content" class="object-cover object-center h-full w-full" src="img/motor.png">
-          </div>
-          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Speed control of D.C. Motor</h2>
-          <script src="https://gist.github.com/g-paras/552236490caaad1531703497b5a09a8f.js"></script>
-        </div>
-      </div>
-      <br>
-      <div class="flex flex-wrap -mx-4 -mb-10 text-center" id="lcd">
-        <div class="sm:w-1/2 mb-10 px-4" id="lcd">
-          <div class="rounded-lg h-64 overflow-hidden">
-            <img alt="content" class="object-cover object-center h-full w-full" src="img/lcd.png">
-          </div>
-          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Temperature Display on 16×2 LCD Module
-          </h2>
-          <script src="https://gist.github.com/g-paras/150f1264ffdc4d3ca44fc948dc870009.js"></script>
-        </div>
-        <div class="sm:w-1/2 mb-10 px-4" id="temp-buzz">
-          <div class="rounded-lg h-64 overflow-hidden">
-            <img alt="content" class="object-cover object-center h-full w-full" src="img/tmp-buzz.png">
-          </div>
-          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Temperature Display on 16×2 LCD Module
-            with buzzer</h2>
+          <div class="sm:w-1/2 mb-10 px-4" id="temp-buzz">
+            <div class="rounded-lg h-64 overflow-hidden">
+              <img
+                alt="content"
+                class="object-cover object-center h-full w-full"
+                src="img/tmp-buzz.png"
+              />
+            </div>
+            <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">
+              Temperature Display on 16×2 LCD Module with buzzer
+            </h2>
             <script src="https://gist.github.com/g-paras/655bffce0c3942e0c9990be83b819c57.js"></script>
-        </div>
-        <div class="sm:w-1/2 mb-10 px-4" id="ultrasonic">
-          <div class="rounded-lg h-64 overflow-hidden">
-            <img alt="content" class="object-cover object-center h-full w-full" src="img/ultrasonic.png">
           </div>
-          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Ultrasonic Distance Sensor</h2>
-          <script src="https://gist.github.com/g-paras/09cfddee8f8a5e9d5a817008affc8c57.js"></script>
-        </div>
+          <div class="sm:w-1/2 mb-10 px-4" id="ultrasonic">
+            <div class="rounded-lg h-64 overflow-hidden">
+              <img
+                alt="content"
+                class="object-cover object-center h-full w-full"
+                src="img/ultrasonic.png"
+              />
+            </div>
+            <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">
+              Ultrasonic Distance Sensor
+            </h2>
+            <script src="https://gist.github.com/g-paras/09cfddee8f8a5e9d5a817008affc8c57.js"></script>
+          </div>
 
-        <div class="sm:w-1/2 mb-10 px-4" id="decorate">
-          <div class="rounded-lg h-64 overflow-hidden">
-            <img alt="content" class="object-cover object-center h-full w-full" src="img/decorate.png">
+          <div class="sm:w-1/2 mb-10 px-4" id="decorate">
+            <div class="rounded-lg h-64 overflow-hidden">
+              <img
+                alt="content"
+                class="object-cover object-center h-full w-full"
+                src="img/decorate.png"
+              />
+            </div>
+            <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">
+              LED Decoration
+            </h2>
+            <script src="https://gist.github.com/g-paras/694e31d829be3c1077e9ef3248c403e5.js"></script>
           </div>
-          <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">LED Decoration</h2>
-          <script src="https://gist.github.com/g-paras/694e31d829be3c1077e9ef3248c403e5.js"></script>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="text-gray-500 bg-gray-900 body-font" id="about">
-    <div class="container px-5 py-24 mx-auto">
-      <div class="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="inline-block w-8 h-8 text-gray-700 mb-8"
-          viewBox="0 0 975.036 975.036">
-          <path
-            d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
-          </path>
-        </svg>
-        <p class="leading-relaxed text-lg">This website is made by Paras Gupta and all the images used are from thinker
-          cad made by himself. You are allowed to use any of the images used in this webpage and the same is applied to
-          the code provided on this page. Please don't forget to give this project a star on GitHub, the link is
-          provided on top. <br> Connect with me on <a
-            href="https://www.linkedin.com/in/paras-gupta-34a780166/"><u>LinkedIn</u></a><br> Follow me on <a
-            href="https://github.com/g-paras"><u>GitHub</u></a></p>
-        <span class="inline-block h-1 w-10 rounded bg-blue-500 mt-8 mb-6"></span>
-        <h2 class="text-white font-medium title-font tracking-wider text-sm">Paras Gupta</h2>
-        <p class="text-gray-600">guptaparas039@gmail.com</p>
-        <h3 class="text-white font-medium title-font tracking-wider text-sm">KIET Group of Institutions</h3>
+    <section class="text-gray-500 bg-gray-900 body-font" id="about">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            class="inline-block w-8 h-8 text-gray-700 mb-8"
+            viewBox="0 0 975.036 975.036"
+          >
+            <path
+              d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"
+            ></path>
+          </svg>
+          <p class="leading-relaxed text-lg">
+            This website is made by Paras Gupta and all the images used are from
+            thinker cad made by himself. You are allowed to use any of the
+            images used in this webpage and the same is applied to the code
+            provided on this page. Please don't forget to give this project a
+            star on GitHub, the link is provided on top. <br />
+            Connect with me on
+            <a href="https://www.linkedin.com/in/paras-gupta-34a780166/"
+              ><u>LinkedIn</u></a
+            ><br />
+            Follow me on <a href="https://github.com/g-paras"><u>GitHub</u></a>
+          </p>
+          <span
+            class="inline-block h-1 w-10 rounded bg-blue-500 mt-8 mb-6"
+          ></span>
+          <h2 class="text-white font-medium title-font tracking-wider text-sm">
+            Paras Gupta
+          </h2>
+          <p class="text-gray-600">guptaparas039@gmail.com</p>
+          <h3 class="text-white font-medium title-font tracking-wider text-sm">
+            KIET Group of Institutions
+          </h3>
+        </div>
       </div>
-    </div>
-  </section>
-</body>
-
+    </section>
+  </body>
 </html>
